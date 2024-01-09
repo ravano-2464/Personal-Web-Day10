@@ -30,7 +30,7 @@ function getDistanceTime(time) {
     }
 }
 
-let dataBlog = [];
+let dataMyProject = [];
 
 function submitData(event) {
     event.preventDefault();
@@ -54,54 +54,51 @@ function submitData(event) {
 
             console.log(projectNameValue, startDateValue, endDateValue, descriptionValue, technologiesValue, imageUrl);
 
-            const blog = {
+            const MyProject = {
                 title: projectNameValue, 
                 content: descriptionValue,
                 technologies: technologiesValue,
                 image: imageUrl,
                 postAt: new Date(),
-                author: "Ravano Akbar Widodo",
-                nodeJs: true,
-                reactJs: true,
-                nextJs: false,
-                typescript: false,
+                author: "Ravano Akbar Widodo"
             }
 
-            dataBlog.push(blog);
-            console.log("dataBlog", dataBlog)
-            renderBlog();
+            dataMyProject.push(MyProject);
+            console.log("dataMy-Project", dataMyProject)
+            renderMyProject();
         }
     }
 }
 
-function renderBlog() {
+function renderMyProject() {
     const contentsElement = document.getElementById("contents");
     contentsElement.innerHTML = '';
 
-    for (let index = 0; index < dataBlog.length; index++) {
+    for (let index = 0; index < dataMyProject.length; index++) {
         contentsElement.innerHTML += `
-        <div class="blog-list-item">
-            <div class="blog-image">
-                <img src="${dataBlog[index].image}" alt="" />
+        <div class="My-Project-list-item">
+            <div class="My-Project-image">
+                <img src="${dataMyProject[index].image}" alt="" />
             </div>
-            <div class="blog-content">
+            <div class="My-Project-content">
                 <div class="btn-group">
                     <button class="btn-edit">Edit Post</button>
                     <button class="btn-post">Delete Post</button>
                 </div>
                 <h1>
-                    <a href="My-Project-detail.html" target="_blank">${dataBlog[index].title}</a>
+                    <a href="My-Project-detail.html" target="_blank">${dataMyProject[index].title}</a>
                 </h1>
-                <div class="detail-blog-content">
-                    ${dataBlog[index].postAt} | ${dataBlog[index].author}
+                <div class="detail-My-Project-content">
+                    ${dataMyProject[index].postAt} | ${dataMyProject[index].author}
                 </div>
-                <p>
-                   ${dataBlog[index].content}
+                <p style="text-align: center;">
+                   ${dataMyProject[index].content}
                 </p>
+                <br>
                 <div class="technologies">
                     <label>Technologies:</label>
                     <ul>
-                        ${dataBlog[index].technologies.map((tech) => `<li>${tech}</li>`).join('')}
+                        ${dataMyProject[index].technologies.map((tech) => `<li>${tech}</li>`).join('')}
                     </ul>
                 </div>
             </div>
@@ -110,5 +107,5 @@ function renderBlog() {
 }
 
 setInterval(function() {
-    renderBlog()
+    renderMyProject()
 }, 1000)
