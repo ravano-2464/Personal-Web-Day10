@@ -1,16 +1,18 @@
-function getDistanceTime(time) {
+function getDistanceTime(startTime, endTime) {
     const timeNow = new Date().getTime();
-    const timePosted = new Date(time).getTime(); // convert input time to milliseconds
+    const timePosted = new Date(startTime).getTime();
 
     const distance = timeNow - timePosted;
-
     const distanceSeconds = Math.floor(distance / 1000);
     const distanceMinutes = Math.floor(distance / 1000 / 60);
     const distanceHours = Math.floor(distance / 1000 / 60 / 60);
     const distanceDays = Math.floor(distance / 1000 / 60 / 60 / 24);
 
     if (distanceDays > 0) {
-        return `${distanceDays} day${distanceDays > 1 ? 's' : ''} ago`;
+        const postedDate = new Date(timePosted);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = postedDate.toLocaleDateString('en-US', options);
+        return `Posted on ${formattedDate}`;
     } else if (distanceHours > 0) {
         return `${distanceHours} hour${distanceHours > 1 ? 's' : ''} ago`;
     } else if (distanceMinutes > 0) {
@@ -18,27 +20,6 @@ function getDistanceTime(time) {
     } else {
         return `${distanceSeconds} second${distanceSeconds > 1 ? 's' : ''} ago`;
     }
-}
-
-
-function durationInDays(startDate, endDate) {
-    const oneDay = 1000 * 60 * 60 * 24;
-
-    const startDateMs = new Date(startDate).getTime();
-    const endDateMs = new Date(endDate).getTime();
-    const durationMs = endDateMs - startDateMs;
-
-    return Math.floor(durationMs / oneDay);
-}
-
-function durationInSeconds(startDate, endDate) {
-    const oneSecond = 1000;
-
-    const startDateMs = new Date(startDate).getTime();
-    const endDateMs = new Date(endDate).getTime();
-    const durationMs = endDateMs - startDateMs;
-
-    return Math.floor(durationMs / oneSecond);
 }
 
 let dataMyProject = [];
@@ -51,39 +32,56 @@ function submitData(event) {
     const description = document.getElementById("inputContent");
     const technologies = document.querySelectorAll("input[type=checkbox]:checked");
     const image = document.getElementById("inputImage");
-    const duration = document.getElementById("inputDuration")
 
-    if (projectName === "" || startDate === "" || endDate === "" || description === "" || technologies === "" || image.length === 0) {
+    if (
+        projectName === "" ||
+        startDate === "" ||
+        endDate === "" ||
+        description === "" ||
+        technologies === "" ||
+        image.files.length === 0
+    ) {
         alert("Please fill in all fields correctly!!!");
         return;
     }
 
-    if (projectName && startDate && endDate && description && technologies && image && image.files.length > 0) {
+    if (
+         projectName &&
+        startDate &&
+        endDate &&
+        description &&
+        technologies &&
+        image &&
+        image.files.length > 0
+    ) {
         const projectNameValue = projectName.value;
         const startDateValue = startDate.value;
         const endDateValue = endDate.value;
         const descriptionValue = description.value;
-        const technologiesValue = Array.from(technologies).map((tech) => tech.value);
+        const technologiesValue = Array.from(technologies).map(
+            (tech) => tech.value
+        );
         const imageValue = image.files[0];
-        const durationValue = getDistanceTime(startDateValue, endDateValue);
+        const postAt = new Date();
+        const durationValue = getDistanceTime(startDateValue, postAt);
 
         if (imageValue) {
             const imageUrl = URL.createObjectURL(imageValue);
 
-            console.log(projectNameValue, startDateValue, endDateValue, descriptionValue, durationValue, technologiesValue, imageUrl);
-
             const MyProject = {
-                title: projectNameValue, 
+                title: projectNameValue,
                 content: descriptionValue,
                 technologies: technologiesValue,
                 image: imageUrl,
-                duration: durationValue,
-                postAt: new Date(),
-                author: "Ravano Akbar Widodo"
-            }
-
+                postAt: postAt,
+                author: "Ravano Akbar Widodo",
+                get duration() {
+                    return getDistanceTime(startDateValue, endDateValue);
+                }
+            };
+            
             dataMyProject.push(MyProject);
-            console.log("dataMy-Project", dataMyProject)
+            console.log("My-Project", dataMyProject);
             renderMyProject();
         }
     }
@@ -107,7 +105,7 @@ function renderMyProject() {
                 <h1>
                     <a href="My-Project-detail.html" target="_blank">${dataMyProject[index].title}</a>
                 </h1>
-                <h3>Duration: ${dataMyProject[index].duration}</h3>
+                <h3>Duration : ${dataMyProject[index].duration}</h3>
                 <br>
                 <div class="detail-My-Project-content">
                     ${dataMyProject[index].postAt} | ${dataMyProject[index].author}
@@ -132,6 +130,8 @@ function renderMyProject() {
     }
 }
 
-setInterval(function() {
-    renderMyProject()
-}, 1000)
+renderMyProject();
+
+setInterval(() => {
+    renderMyProject();
+}, 1000);
