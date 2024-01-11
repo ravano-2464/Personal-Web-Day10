@@ -1,24 +1,23 @@
-function getDistanceTime(startTime, endTime) {
+function getDistanceTime(startTime) {
     const timeNow = new Date().getTime();
     const timePosted = new Date(startTime).getTime();
 
-    const distance = timeNow - timePosted;
-    const distanceSeconds = Math.floor(distance / 1000000);
-    const distanceMinutes = Math.floor(distance / 1000 / 60);
-    const distanceHours = Math.floor(distance / 1000 / 60 / 60);
-    const distanceDays = Math.floor(distance / 1000 / 60 / 60 / 24);
+    const distanceSeconds = Math.floor((timeNow - timePosted) / 1000);
+    const distanceMinutes = Math.floor(distanceSeconds / 60);
+    const distanceHours = Math.floor(distanceMinutes / 60);
+    const distanceDays = Math.floor(distanceHours / 24);
+    const distanceYears = Math.floor(distanceDays / 365);
 
-    if (distanceDays > 0) {
-        const postedDate = new Date(timePosted);
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const formattedDate = postedDate.toLocaleDateString('en-US', options);
-        return `Posted on ${formattedDate}`;
-    } else if (distanceSeconds > 0) {
-        return `${distanceSeconds} second${distanceSeconds > 1 ? 's' : ''} ago`;
+    if (distanceYears > 0) {
+        return `${distanceYears} year${distanceYears > 1 ? 's' : ''} ago`;
+    } else if (distanceDays > 0) {
+        return `${distanceDays} day${distanceDays > 1 ? 's' : ''} ago`;
+    } else if (distanceHours > 0) {
+        return `${distanceHours} hour${distanceHours > 1 ? 's' : ''} ago`;
     } else if (distanceMinutes > 0) {
         return `${distanceMinutes} minute${distanceMinutes > 1 ? 's' : ''} ago`;
     } else {
-        return `${distanceHours} hour${distanceHours > 1 ? 's' : ''} ago`;
+        return `${distanceSeconds} second${distanceSeconds > 1 ? 's' : ''} ago`;
     }
 }
 
