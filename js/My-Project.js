@@ -17,7 +17,7 @@ function getDistanceTime(startTime) {
     } else if (distanceMinutes > 0) {
         return `${distanceMinutes} minute${distanceMinutes > 1 ? 's' : ''} ago`;
     } else {
-        return `${distanceSeconds} second${distanceSeconds > 1 ? 's' : ''} ago`;
+        return `${distanceSeconds} second${distanceSeconds !== 1 ? 's' : ''} ago`;
     }
 }
 
@@ -32,27 +32,12 @@ function submitData(event) {
     const technologies = document.querySelectorAll("input[type=checkbox]:checked");
     const image = document.getElementById("inputImage");
 
-    if (
-        projectName === "" ||
-        startDate === "" ||
-        endDate === "" ||
-        description === "" ||
-        technologies === "" ||
-        image.files.length === 0
-    ) {
+    if (projectName === "" || startDate === "" || endDate === "" || description === "" || technologies === "" || image.files.length === 0) {
         alert("Please fill in all fields correctly!!!");
         return;
     }
 
-    if (
-        projectName &&
-        startDate &&
-        endDate &&
-        description &&
-        technologies &&
-        image &&
-        image.files.length > 0
-    ) {
+    if (projectName && startDate && endDate && description && technologies && image && image.files.length > 0) {
         const projectNameValue = projectName.value;
         const startDateValue = startDate.value;
         const endDateValue = endDate.value;
@@ -62,7 +47,7 @@ function submitData(event) {
         );
         const imageValue = image.files[0];
         const postAt = new Date();
-        const durationValue = getDistanceTime(startDateValue, postAt);
+        const durationValue = getDistanceTime(startDateValue, endDateValue);
 
         if (imageValue) {
             const imageUrl = URL.createObjectURL(imageValue);
@@ -75,12 +60,12 @@ function submitData(event) {
                 postAt: postAt,
                 author: "Ravano Akbar Widodo",
                 get duration() {
-                    return getDistanceTime(startDateValue, postAt);
+                    return getDistanceTime(postAt);
                 }
             };
 
             dataMyProject.push(MyProject);
-            console.log("My-Project", dataMyProject);
+            console.log("My Project", dataMyProject);
             renderMyProject();
         }
     }
@@ -104,7 +89,7 @@ function renderMyProject() {
                 <h1>
                     <a href="My-Project-detail.html" target="_blank">${dataMyProject[index].title}</a>
                 </h1>
-                <h3>Duration: ${dataMyProject[index].duration}</h3>
+                <h3>Duration : ${dataMyProject[index].duration}</h3>
                 <br>
                 <div class="detail-My-Project-content">
                     ${dataMyProject[index].postAt} | ${dataMyProject[index].author}
@@ -114,7 +99,7 @@ function renderMyProject() {
                 </p>
                 <br>
                 <div class="technologies" style="text-align: center;">
-                    <label>Technologies:</label>
+                    <label>Technologies :</label>
                     <ul style="list-style: none; padding: 0;">
                         ${dataMyProject[index].technologies.map((tech) => `<li>${tech}</li>`).join('')}
                     </ul>
