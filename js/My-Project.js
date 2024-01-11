@@ -9,15 +9,15 @@ function getDistanceTime(startTime) {
     const distanceYears = Math.floor(distanceDays / 365);
 
     if (distanceYears > 0) {
-        return `${distanceYears} year'${distanceYears > -1 ? 's' : ''} ago`;
+        return `${distanceYears} Year'${distanceYears > -1 ? 's' : ''} Ago`;
     } else if (distanceDays > 0) {
-        return `${distanceDays} day'${distanceDays > -1 ? 's' : ''} ago`;
+        return `${distanceDays} Day'${distanceDays > -1 ? 's' : ''} Ago`;
     } else if (distanceHours > 0) {
-        return `${distanceHours} hour'${distanceHours >  -1 ? 's' : ''} ago`;
+        return `${distanceHours} Hour'${distanceHours >  -1 ? 's' : ''} Ago`;
     } else if (distanceMinutes > 0) {
-        return `${distanceMinutes} minute'${distanceMinutes > -1 ? 's' : ''} ago`;
+        return `${distanceMinutes} Minute'${distanceMinutes > -1 ? 's' : ''} Ago`;
     } else {
-        return `${distanceSeconds} second'${distanceSeconds !== -1 ? 's' : ''} ago`;
+        return `${distanceSeconds} Second'${distanceSeconds !== -1 ? 's' : ''} Ago`;
     }
 }
 
