@@ -22,7 +22,6 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 .btn-contact:hover,
 .btn-submit:hover {
     background-color: #333;
@@ -49,44 +48,36 @@
     display: block;
 }
 
-.My-Project-list {
+.text-checkbox {
+    font-size: 14px;
     display: flex;
-    justify-content: center;
     align-items: center;
+}
+
+.checkbox div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.checkbox input {
+    margin-right: 8px;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+form {
+    display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.button-group {
     text-align: center;
-   }
-    
-    .text-checkbox {
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-   }
-
-    .checkbox div {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-   }
-
-    .checkbox input {
-        margin-right: 8px;
-   }
-
-    .form-container {
-        max-width: 600px;
-        margin: auto;
-   }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-   }
-
-    .button-group {
-        text-align: center;
-   }
+}
 
 .My-Project-form {
     padding: 50px 0;
