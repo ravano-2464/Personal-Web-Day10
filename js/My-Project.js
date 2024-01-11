@@ -3,7 +3,7 @@ function getDistanceTime(startTime, endTime) {
     const timePosted = new Date(startTime).getTime();
 
     const distance = timeNow - timePosted;
-    const distanceSeconds = Math.floor(distance / 1000);
+    const distanceSeconds = Math.floor(distance / 1000000);
     const distanceMinutes = Math.floor(distance / 1000 / 60);
     const distanceHours = Math.floor(distance / 1000 / 60 / 60);
     const distanceDays = Math.floor(distance / 1000 / 60 / 60 / 24);
@@ -13,12 +13,12 @@ function getDistanceTime(startTime, endTime) {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const formattedDate = postedDate.toLocaleDateString('en-US', options);
         return `Posted on ${formattedDate}`;
-    } else if (distanceHours > 0) {
-        return `${distanceHours} hour${distanceHours > 1 ? 's' : ''} ago`;
+    } else if (distanceSeconds > 0) {
+        return `${distanceSeconds} second${distanceSeconds > 1 ? 's' : ''} ago`;
     } else if (distanceMinutes > 0) {
         return `${distanceMinutes} minute${distanceMinutes > 1 ? 's' : ''} ago`;
     } else {
-        return `${distanceSeconds} second${distanceSeconds > 1 ? 's' : ''} ago`;
+        return `${distanceHours} hour${distanceHours > 1 ? 's' : ''} ago`;
     }
 }
 
@@ -46,7 +46,7 @@ function submitData(event) {
     }
 
     if (
-         projectName &&
+        projectName &&
         startDate &&
         endDate &&
         description &&
@@ -76,10 +76,10 @@ function submitData(event) {
                 postAt: postAt,
                 author: "Ravano Akbar Widodo",
                 get duration() {
-                    return getDistanceTime(startDateValue, endDateValue);
+                    return getDistanceTime(startDateValue, postAt);
                 }
             };
-            
+
             dataMyProject.push(MyProject);
             console.log("My-Project", dataMyProject);
             renderMyProject();
@@ -105,7 +105,7 @@ function renderMyProject() {
                 <h1>
                     <a href="My-Project-detail.html" target="_blank">${dataMyProject[index].title}</a>
                 </h1>
-                <h3>Duration : ${dataMyProject[index].duration}</h3>
+                <h3>Duration: ${dataMyProject[index].duration}</h3>
                 <br>
                 <div class="detail-My-Project-content">
                     ${dataMyProject[index].postAt} | ${dataMyProject[index].author}
@@ -114,9 +114,9 @@ function renderMyProject() {
                    ${dataMyProject[index].content}
                 </p>
                 <br>
-                <div class="technologies">
+                <div class="technologies" style="text-align: center;">
                     <label>Technologies:</label>
-                    <ul style="text-align: center; list-style: none; padding: 0;">
+                    <ul style="list-style: none; padding: 0;">
                         ${dataMyProject[index].technologies.map((tech) => `<li>${tech}</li>`).join('')}
                     </ul>
                 </div>
