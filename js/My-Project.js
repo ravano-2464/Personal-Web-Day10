@@ -83,13 +83,13 @@ function renderMyProject() {
             </div>
             <div class="My-Project-content">
                 <div class="btn-group">
-                    <button class="btn-edit">Edit Post</button>
-                    <button class="btn-post">Delete Post</button>
+                    <button class="btn-edit"><i class="fa fa-pencil"></i> Edit Post</button>
+                    <button class="btn-post"><i class="fa fa-trash"></i> Delete Post</button>
                 </div>
                 <h1>
                     <a href="My-Project-detail.html" target="_blank">${dataMyProject[index].title}</a>
                 </h1>
-                <h3>Duration : ${dataMyProject[index].duration}</h3>
+                <h3><i class="fa fa-clock-o"></i> Duration : ${dataMyProject[index].duration}</h3>
                 <br>
                 <div class="detail-My-Project-content">
                     ${dataMyProject[index].postAt} | ${dataMyProject[index].author}
