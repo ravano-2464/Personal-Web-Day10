@@ -99,7 +99,7 @@ function renderMyProject() {
                 </p>
                 <br>
                 <div class="technologies" style="text-align: center;">
-                    <label>Technologies :</label>
+                    <label><i class="fas fa-cogs"></i> Technologies :</label>
                     <ul style="list-style: none; padding: 0;">
                     <br>
                         ${dataMyProject[index].technologies.map((tech) => `<li>${tech}</li>`).join('')}
