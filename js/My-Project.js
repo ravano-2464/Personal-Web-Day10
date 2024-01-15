@@ -92,7 +92,7 @@ function renderMyProject() {
                 <h3><i class="far fa-clock"></i> Duration : ${dataMyProject[index].duration}</h3>
                 <br>
                 <div class="detail-My-Project-content">
-                    ${dataMyProject[index].postAt} | ${dataMyProject[index].author}
+                    <i class="far fa-calendar-alt"></i> ${dataMyProject[index].postAt}| <i class="fa fa-user-circle"></i> ${dataMyProject[index].author}
                 </div>
                 <p style="text-align: center;">
                    ${dataMyProject[index].content}
