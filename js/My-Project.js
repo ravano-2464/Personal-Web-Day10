@@ -87,9 +87,9 @@ function renderMyProject() {
                     <button class="btn-post"><i class="fa fa-trash"></i> Delete Post</button>
                 </div>
                 <h1>
-                    <a href="My-Project-detail.html" target="_blank">${dataMyProject[index].title}</a>
+                    <a href="My-Project-detail.html" target="_blank"><i class="fa fa-desktop"></i> ${dataMyProject[index].title}</a>
                 </h1>
-                <h3><i class="fa fa-clock-o"></i> Duration : ${dataMyProject[index].duration}</h3>
+                <h3><i class="far fa-clock"></i> Duration : ${dataMyProject[index].duration}</h3>
                 <br>
                 <div class="detail-My-Project-content">
                     ${dataMyProject[index].postAt} | ${dataMyProject[index].author}
