@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Creating My Project Page</title>
+    <title>Creating My Project Page - Detail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/My-Project.css" />
     <link rel="icon" href="assets/icon/dumbways.ico" type="image/x-icon">
@@ -34,7 +34,7 @@
                 </li>
             </ul>
             <div style="display: flex; width: 100%; justify-content: end;">
-                <a href="contact.html" class="btn-contact nav-collapse"><i class="fa fa-phone"></i> Contact Me</a>
+                <a href="contact.html" class="btn-contact nav-collapse" ><i class="fa fa-phone"></i> Contact Me</a>
                 <i class="fa-solid fa-bars fa-2x" style="cursor: pointer;" id="hamburger-button" onclick="openHamburger()"></i>
             </div>
         </div>
@@ -46,90 +46,25 @@
         <a href="contact.html"><i class="fa fa-phone"></i> Contact Me</a>
     </div>
 
-    <div class="My-Project">
-        <div class="My-Project-form">
-            <div class="form-container">
-                <form onsubmit="submitData(event)">
-                    <h1><i class="fas fa-plus-circle"></i> ADD MY PROJECT</h1>
-                    <div>
-                        <label for="inputMyProject"><i class="fas fa-project-diagram"></i> Project Name</label>
-                        <input type="text" id="inputMyProject" />
-                    </div>
-                    <div style="display: flex; gap: 20px;">
-                        <div>
-                            <label for="startDate"><i class="fa fa-calendar"></i> Start Date</label>
-                            <input type="date" id="startDate" />
-                        </div>
-                        <div>
-                            <label for="endDate"><i class="fa fa-calendar"></i> End Date</label>
-                            <input type="date" id="endDate" />
-                        </div>
-                    </div>
-                    <div>
-                        <label for="inputContent"><i class="fas fa-info-circle"></i> Description</label>
-                        <textarea id="inputContent"></textarea>
-                    </div>
-                    <div>
-                        <h2><i class="fas fa-cogs"></i> Technologies</h2>
-                    </div>
-                    <div class="checkbox">
-                        <div>
-                            <input type="checkbox" id="inputNodeJs" style="margin-top: 15px; border-radius: 15px;" value="Node Js">
-                            <label class="text-checkbox" for="inputNodeJs">
-                                <i class="fa-brands fa-node-js"  style="margin-right: 8px;" justify-content: flex-right;></i> Node Js
-                            </label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="inputNextJs" style="margin-top: 15px; border-radius: 15px;" value="Next Js">
-                            <label class="text-checkbox" for="inputNextJs">
-                                <img src="assets/icon/Next-Js.ico" width="16" height="16" style="margin-right: 8px;" justify-content: flex-right;></i> Next Js 
-                            </label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="inputReactJs" style="margin-top: 15px; border-radius: 15px;" value="React Js" />
-                            <label class="text-checkbox" for="inputReactJs">
-                                <i class="fa-brands fa-react" style="margin-right: 8px;" justify-content: flex-right;></i> React Js 
-                            </label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="inputTypeScript"style="margin-top: 15px; border-radius: 15px;"  value="TypeScript" />
-                            <label class="text-checkbox" for="inputTypeScript">
-                                <img src="assets/icon/TypeScript.ico" width="16" height="16" style="margin-right: 8px;" justify-content: flex-right;></i> TypeScript
-                            </label>
-                        </div>                        
-                    </div>                                        
-                    <br>
-                    <div>
-                        <label for="inputImage"><i class="fa fa-camera"></i> Choose Image Or Files</label>
-                        <div class="input-My-Project-image-group">
-                            <label for="inputImage" class="custom-file-upload">
-                                <p class="text-label"><i class="fa fa-folder-open"></i> Attach Image Or Files</p>
-                            </label>
-                            <input type="file" id="inputImage" show />
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn-submit"><i class="fa fa-paper-plane"></i> Post My Project</button>
-                    </div>
-                </form>
-            </div>
+    <div class="My-Project-detail">
+        <div class="My-Project-detail-container">
+            <h1>Pasar Coding di Indonesia Dinilai Masih Menjanjikan</h1>
+            <div class="author">12 Jul 2021 22:30 WIB | Ichsan Emrald Alamsyah</div>
+            <img src="assets/image/My-Project-Detail-Image.png" alt="detail" />
+            <p>
+                REPUBLIKA.CO.ID, JAKARTA -- Ketimpangan sumber daya manusia (SDM) di
+                sektor digital masih menjadi isu yang belum terpecahkan. Berdasarkan
+                penelitian ManpowerGroup, ketimpangan SDM global, termasuk Indonesia,
+                meningkat dua kali lipat dalam satu dekade terakhir. Khusus di sektor
+                teknologi yang berkembang pesat, menurut Kemendikbudristek, Indonesia
+                kekurangan sembilan juta pekerja teknologi hingga tahun 2030. Hal itu
+                berarti Indonesia memerlukan sekitar 600 ribu SDM digital yang
+                memasuki pasar setiap tahunnya.
+            </p>
         </div>
-
-        <div>
-            <h2 style="text-align: center;"><i class="fa fa-desktop"></i> My Projects</h2>
-            <div id="contents" class="My-Project-list">
-                <div class="card-icons">
-                    <i class="fa-brands fa-google-play fa-xl"></i>
-                    <i class="fa-brands fa-android fa-xl"></i>
-                    <i class="fa-brands fa-java fa-lg"></i>
-                </div>
-            </div>
-        </div>
-
     </div>
-    
+
     <script src="js/nav.js"></script>
-    <script src="js/My-Project.js"></script>
 </body>
 
 </html>
