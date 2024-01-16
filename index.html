@@ -41,174 +41,88 @@
             </div>
         </div>
     </nav>
+
     <div class="container">
-        <form onsubmit="submitData(event)">
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <h1 class="h1" style="display: flex;justify-content: center; margin-top: 10%;"><i class="fas fa-plus-circle"></i> ADD MY PROJECT</h1>
-                    <div class="form-group">
-                        <label for="inputMyProject" class="text-label">Project name</label>
-                        <input type="text" id="inputMyProject" name="title" class="form-control" />
-                    </div>
-                    <div class="container-date">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="startDate" class="text-label"><i class="fa fa-calendar"></i> Start Date</label>
-                                <input type="date" id="startDate" name="startDate" class="form-control" />
-                            </div>
-                            <div class="col-md-6">
-                                <label for="endDate" class="text-label"><i class="fa fa-calendar"></i> End Date</label>
-                                <input type="date" id="endDate" name="endDate" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputContent"><i class="fas fa-info-circle"></i> Description</label>
-                        <textarea id="inputContent" name="description" class="form-control"></textarea>
-                    </div>
-                    <label class="text-label mr-3"><i class="fas fa-cogs"></i> Technologies :</label>
-                    <div class="form-group d-flex" style="gap: 5px;">
-                        <div class="d-flex flex-column">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="NodeJs">
-                                <label class="form-check-label" for="inputNodeJs"><i class="fa-brands fa-node-js" ></i> Node Js</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="ReactJs">
-                                <label class="form-check-label" for="inputReactJs"><i class="fa-brands fa-react" style="margin-right: 1px;" justify-content: flex-right;></i> React Js</label>
-                            </div>
-                        </div>
+    <form onsubmit="submitData(event)">
+        <div class="row justify-content-md-center mt-5">
+            <div class="col-md-6">
+                <h1 class="h1 text-center"><i class="fas fa-plus-circle"></i> ADD MY PROJECT</h1>
 
-                        <div class="d-flex flex-column">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="NextJs">
-                                <label class="form-check-label" for="inputNextJs"><img src="assets/icon/Next-Js.ico" width="16" height="16" style="margin-right: 1px;" justify-content: flex-right;></i> Next Js</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="TypeScript">
-                                <label class="form-check-label" for="inputTypeScript"><img src="assets/icon/TypeScript.ico" width="16" height="16" style="margin-right: 1px;" justify-content: flex-right;></i> TypeScript</label>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="inputMyProject" class="text-label"><i class="fas fa-project-diagram"></i> Project Name</label>
+                    <input type="text" id="inputMyProject" name="title" class="form-control" />
+                </div>
 
-                    <div class="mb-3">
-                        <label for="inputImage" class="form-label">Upload image</label>
-                        <div class="input-group">
-                            <input type="file" class="form-control" id="attachFile">
-                            <label for="attachFile" class="input-group-text">
-                                <img src="../assets/image/file (1).png" alt="file" style="width: 20px; height: 20px;">
-                            </label>
-                        </div>
-                        <img id="previewImage" src="#" alt="Preview" style="max-width: 100%; display: none;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="startDate" class="text-label"><i class="fa fa-calendar"></i> Start Date</label>
+                        <input type="date" id="startDate" name="startDate" class="form-control" />
                     </div>
-
-                    <div class="col-12 text-end mt-4">
-                        <button class="btn btn-secondary rounded-pill " type="submit"
-                            style="width: 20%; background-color: #111727;">Submit </button>
+                    <div class="col-md-6">
+                        <label for="endDate" class="text-label"><i class="fa fa-calendar"></i> End Date</label>
+                        <input type="date" id="endDate" name="endDate" class="form-control" />
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="inputContent"><i class="fas fa-info-circle"></i> Description</label>
+                    <textarea id="inputContent" name="description" class="form-control"></textarea>
+                </div>
+
+                <label class="text-label mr-3"><i class="fas fa-cogs"></i> Technologies :</label>
+                <div class="form-group d-flex" style="gap: 5px;">
+                    <div class="d-flex flex-column">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="NodeJs">
+                            <label class="form-check-label" for="inputNodeJs"><i class="fa-brands fa-node-js"></i> Node Js</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="ReactJs">
+                            <label class="form-check-label" for="inputReactJs"><i class="fa-brands fa-react"></i> React Js</label>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="NextJs">
+                            <label class="form-check-label" for="inputNextJs"><img src="assets/icon/Next-Js.ico" width="16" height="16"></i> Next Js</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="TypeScript">
+                            <label class="form-check-label" for="inputTypeScript"><img src="assets/icon/TypeScript.ico" width="16" height="16"></i> TypeScript</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputImage" class="text-label"><i class="fa fa-camera"></i> Choose Image Or Files</label>
+                    <div class="input-group mb-3">
+                        <label for="inputImage" class="input-group-text"><i class="fa fa-folder-open"></i> Attach Image Or Files</label>
+                        <input type="file" class="form-control" id="inputImage" show />
+                    </div>
+                </div>
+
+                <div class="text-end mt-4">
+                    <button class="btn btn-secondary rounded-pill" type="submit" style="width: 20%; background-color: #111727;">
+                        <i class="fa fa-paper-plane"></i> Post My Project
+                    </button>
+                </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
+
     <div class="row gap-5  " style=" margin:5px; margin-top: 10px; background-color:#f8f8f8;" id="project-list">
         <h1 class="d-flex justify-content-center" >MY PROJECT</h1>
-        <div class="row gap-5" id="project-li">
-        <div class="card " style="width: 25rem;">
-            <div class="card-body">
-                <img src="assets/image/logo1.jpg" class="card-img-top gap-2" alt="logo1">
-                <h2 style="font-size: 20px;">Dumbways Web App 2021</h2>
-                <h4 style="font-size: 10px;">Durasi 3 bulan</h4>
-              <p class="card-text">App that used for  student, it was deployed and can be downloaded on 
-                playstore. Happy download</p>
-                <div class="m-2">
-                    <i class="fa-brands fa-google-play fa-xl"></i>
-                    <i class="fa-brands fa-android fa-xl"></i>
-                    <i class="fa-brands fa-java fa-lg"></i>
-                </div>
-                <div class="d-flex justify-content-center mt-5  m-2 gap-3">
-                   <button  style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;">Exit</button>
-                   <button style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;"> Delete</button>
-                </div>
-    
+        <div id="contents" class="My-Project-list">
+            <div class="card-icons">
+                <i class="fa-brands fa-google-play fa-xl"></i>
+                <i class="fa-brands fa-android fa-xl"></i>
+                <i class="fa-brands fa-java fa-lg"></i>
             </div>
-          </div>
-          <div class="card " style="width: 25rem;">
-            <img src="assets/logo2.jpg" class="card-img-top" alt="logo2">
-            <div class="card-body">
-                <h2 style="font-size: 20px;">Dumbways Web App 2021</h2>
-                <h4 style="font-size: 10px;">Durasi 3 bulan</h4>
-              <p class="card-text">App that used for  student, it was deployed and can be downloaded on 
-                playstore. Happy download</p>
-                <div class="m-2">
-                    <i class="fa-brands fa-google-play fa-xl"></i>
-                    <i class="fa-brands fa-android fa-xl"></i>
-                    <i class="fa-brands fa-java fa-lg"></i>
-                </div>
-                <div class="d-flex justify-content-center mt-5  m-2 gap-3">
-                   <button  style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;">Exit</button>
-                   <button style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;"> Delete</button>
-                </div>
-    
-            </div>
-          </div>
-          <div class="card " style="width: 25rem;">
-            <img src="assets/logo3.jpg" class="card-img-top" alt="logo3">
-            <div class="card-body">
-                <h2 style="font-size: 20px;">Dumbways Web App 2021</h2>
-                <h4 style="font-size: 10px;">Durasi 3 bulan</h4>
-              <p class="card-text">App that used for  student, it was deployed and can be downloaded on 
-                playstore. Happy download</p>
-                <div class="m-2">
-                    <i class="fa-brands fa-google-play fa-xl"></i>
-                    <i class="fa-brands fa-android fa-xl"></i>
-                    <i class="fa-brands fa-java fa-lg"></i>
-                </div>
-                <div class="d-flex justify-content-center mt-5  m-2 gap-3">
-                   <button  style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;">Exit</button>
-                   <button style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;"> Delete</button>
-                </div>
-    
-            </div>
-          </div>
-          <div class="card " style="width: 25rem;">
-            <img src="assets/logo4.jpg" class="card-img-top" alt="logo4">
-            <div class="card-body">
-                <h2 style="font-size: 20px;">Dumbways Web App 2021</h2>
-                <h4 style="font-size: 10px;">Durasi 3 bulan</h4>
-              <p class="card-text">App that used for  student, it was deployed and can be downloaded on 
-                playstore. Happy download</p>
-                <div class="m-2">
-                    <i class="fa-brands fa-google-play fa-xl"></i>
-                    <i class="fa-brands fa-android fa-xl"></i>
-                    <i class="fa-brands fa-java fa-lg"></i>
-                </div>
-                <div class="d-flex justify-content-center mt-5  m-2 gap-3">
-                   <button  style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;">Exit</button>
-                   <button style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;"> Delete</button>
-                </div>
-    
-            </div>
-          </div>
-          <div class="card " style="width: 25rem;">
-            <img src="assets/logo5.jpg" class="card-img-top" alt="logo5">
-            <div class="card-body">
-                <h2 style="font-size: 20px;">Dumbways Web App 2021</h2>
-                <h4 style="font-size: 10px;">Durasi 3 bulan</h4>
-              <p class="card-text">App that used for  student, it was deployed and can be downloaded on 
-                playstore. Happy download</p>
-                <div class="m-2">
-                    <i class="fa-brands fa-google-play fa-xl"></i>
-                    <i class="fa-brands fa-android fa-xl"></i>
-                    <i class="fa-brands fa-java fa-lg"></i>
-                </div>
-                <div class="d-flex justify-content-center mt-5  m-2 gap-3">
-                   <button  style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;">Exit</button>
-                   <button style="width: 50%; border-radius: 10px; background-color: #111727; color: #e3e7eb;"> Delete</button>
-                </div>
-    
-            </div>
-          </div>
         </div>
+    </div>
+
     </div>
     <script src="js/nav.js"></script>
     <script src="js/My-Project.js"></script>

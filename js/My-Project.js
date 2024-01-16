@@ -87,13 +87,14 @@ function renderMyProject() {
                     <button class="btn-post"><i class="fa fa-trash"></i> Delete Post</button>
                 </div>
                 <h1>
-                    <a href="My-Project-detail.html" target="_blank"><i class="fa fa-desktop"></i> ${dataMyProject[index].title}</a>
+                    <a href="My-Project.html" target="_blank"><i class="fa fa-desktop"></i> ${dataMyProject[index].title}</a>
                 </h1>
                 <h3><i class="far fa-clock"></i> Duration : ${dataMyProject[index].duration}</h3>
                 <br>
                 <div class="detail-My-Project-content">
                     <i class="far fa-calendar-alt"></i> ${dataMyProject[index].postAt}| <i class="fa fa-user-circle"></i> ${dataMyProject[index].author}
                 </div>
+                <br>
                 <p style="text-align: center;">
                    ${dataMyProject[index].content}
                 </p>
