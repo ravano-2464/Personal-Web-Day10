@@ -12,165 +12,166 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <style>
-             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-             * {
-                  text-decoration: none;
-                  font-family: 'Poppins', sans-serif;
-                  margin: 0;
-                  padding: 0;
-                  box-sizing: border-box;
-               }
-
-             .nav-link {
-                  font-size: 25px;
-               }
-
-             .nav-link a {
-                  color: black;
-                  white-space: nowrap;
-                  display: block;
-                  text-decoration: none;
-              }
-
-             .nav-link a:active {
-                color: orangered;
-              }  
-
-             .nav-link a:hover {
-                  color: orangered;
-              }
-
-             .button:hover {
-                 color: orangered;
-                 color: #fff;
-              }
-
-            .btn-submit,
-            .My-Project-form form button,
-            .My-Project .My-Project-list .btn-group .btn-edit,
-            .My-Project .My-Project-list .btn-group .btn-post {
-                background-color: #f7f7f7;
-                color: #333;
-                padding: 10px;
-                width: 130px;
-                font-size: 16px;
-                border-radius: 10px;
-                text-decoration: none;
-                text-align: center;
-                border: 2px solid #333;
-                transition: background-color 0.3s ease, color 0.3s ease;
-            }
-        
-            .btn-submit:hover,
-            .My-Project-form form button:hover,
-            .My-Project .My-Project-list .btn-group .btn-edit:hover,
-            .My-Project .My-Project-list .btn-group .btn-post:hover {
-                background-color: #333;
-                color: #fff;
-            }
-        
-            .My-Project-form,
-            .My-Project .My-Project-list {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                text-align: center;
-            }
-        
-            .text-checkbox {
-                font-size: 14px;
-                display: flex;
-                align-items: center;
-            }
-        
-            .checkbox div,
-            .checkbox-item {
-                display: flex;
-                align-items: center;
-                margin-bottom: 8px;
-                flex-basis: 50%;
-            }
-        
-            .checkbox input {
-                margin-right: 8px;
-            }
-        
-            .form-container,
-            .My-Project-form .form-container,
-            .My-Project-detail-container {
-                max-width: 600px;
-                margin: auto;
-            }
-        
-            form,
-            .My-Project-form form,
-            .My-Project .My-Project-list .My-Project-list-item {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-        
-            .button-group,
-            .My-Project-form form .button-group,
-            .My-Project .My-Project-list .btn-group,
-            .hamburger-nav-container {
-                text-align: center;
-            }
-    
-            .My-Project hr {
-                border: 1px solid #ddd;
-                width: 80%;
-                margin-right: auto;
-                margin-left: auto;
-            }
-        
-            .My-Project .My-Project-list .My-Project-list-item .My-Project-image img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                object-fit: cover;
-            }
-        
-            .My-Project .My-Project-list h1 a {
-                color: black;
-                text-decoration: none;
-            }
-        
-            .My-Project-detail-container img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-        
-            .My-Project-detail-container h1 {
-                font-style: normal;
-                font-weight: 800;
-                font-size: 36px;
-                line-height: 120%;
-                margin-bottom: 15px;
-            }
-        
-            .My-Project-detail-container .author {
-                font-weight: 100;
-                font-size: 18px;
-                line-height: 120%;
-                margin-bottom: 20px;
-            }
-        
-            .My-Project-detail-container p {
-                margin-top: 40px;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 20px;
-                line-height: 140%;
-                text-align: justify;
-            }
-        </style>
 </head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    * {
+         text-decoration: none;
+         font-family: 'Poppins', sans-serif;
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+    .nav-link {
+         font-size: 25px;
+      }
+
+    .nav-link a {
+         color: black;
+         white-space: nowrap;
+         display: block;
+         text-decoration: none;
+     }
+
+    .nav-link a:active {
+       color: orangered;
+     }  
+
+    .nav-link a:hover {
+         color: orangered;
+     }
+
+    .button:hover {
+        color: orangered;
+        color: #fff;
+     }
+
+   .btn-submit,
+   .My-Project-form form button,
+   .My-Project .My-Project-list .btn-group .btn-edit,
+   .My-Project .My-Project-list .btn-group .btn-post {
+       background-color: #f7f7f7;
+       color: #333;
+       padding: 10px;
+       width: 130px;
+       font-size: 16px;
+       border-radius: 10px;
+       text-decoration: none;
+       text-align: center;
+       border: 2px solid #333;
+       transition: background-color 0.3s ease, color 0.3s ease;
+   }
+
+   .btn-submit:hover,
+   .My-Project-form form button:hover,
+   .My-Project .My-Project-list .btn-group .btn-edit:hover,
+   .My-Project .My-Project-list .btn-group .btn-post:hover {
+       background-color: #333;
+       color: #fff;
+   }
+
+   .My-Project-form,
+   .My-Project .My-Project-list {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       text-align: center;
+   }
+
+   .text-checkbox {
+       font-size: 14px;
+       display: flex;
+       align-items: center;
+   }
+
+   .checkbox div,
+   .checkbox-item {
+       display: flex;
+       align-items: center;
+       margin-bottom: 8px;
+       flex-basis: 50%;
+   }
+
+   .checkbox input {
+       margin-right: 8px;
+   }
+
+   .form-container,
+   .My-Project-form .form-container,
+   .My-Project-detail-container {
+       max-width: 600px;
+       margin: auto;
+   }
+
+   form,
+   .My-Project-form form,
+   .My-Project .My-Project-list .My-Project-list-item {
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+   }
+
+   .button-group,
+   .My-Project-form form .button-group,
+   .My-Project .My-Project-list .btn-group,
+   .hamburger-nav-container {
+       text-align: center;
+   }
+
+   .My-Project hr {
+       border: 1px solid #ddd;
+       width: 80%;
+       margin-right: auto;
+       margin-left: auto;
+   }
+
+   .My-Project .My-Project-list .My-Project-list-item .My-Project-image img {
+       width: 100%;
+       height: auto;
+       border-radius: 8px;
+       object-fit: cover;
+   }
+
+   .My-Project .My-Project-list h1 a {
+       color: black;
+       text-decoration: none;
+   }
+
+   .My-Project-detail-container img {
+       width: 100%;
+       height: auto;
+       border-radius: 8px;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   }
+
+   .My-Project-detail-container h1 {
+       font-style: normal;
+       font-weight: 800;
+       font-size: 36px;
+       line-height: 120%;
+       margin-bottom: 15px;
+   }
+
+   .My-Project-detail-container .author {
+       font-weight: 100;
+       font-size: 18px;
+       line-height: 120%;
+       margin-bottom: 20px;
+   }
+
+   .My-Project-detail-container p {
+       margin-top: 40px;
+       font-style: normal;
+       font-weight: normal;
+       font-size: 20px;
+       line-height: 140%;
+       text-align: justify;
+   }
+</style>
 
 <body style="background-color: #e3e7eb;">
     <nav class="navbar navbar-expand-lg bg-light">
